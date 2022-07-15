@@ -2,6 +2,8 @@ import { INCREMENT } from './types'
 import { DECREMENT } from './types'
 import { INPUT_TEXT } from './types'
 import { COMMENT_CREATE } from './types'
+import { COMMENT_DELETE } from './types'
+import { COMMENT_UPDATE } from './types'
 import { COMMENT_LOAD } from './types'
 import axios from 'axios'
 
@@ -30,6 +32,21 @@ export function commentCreate(text, id) {
     data: { text, id },
   }
 }
+
+export function commentDelete(text) {
+  return {
+    type: COMMENT_DELETE,
+    data:  text,
+  }
+}
+
+export function commentUpdate(text) {
+  return {
+    type: COMMENT_UPDATE,
+    data:  text,
+  }
+}
+
 
 export function commentsLoadbk() {
   return async (dispatch) => {
